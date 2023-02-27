@@ -1,4 +1,5 @@
 import { NgModule } from "@angular/core";
+import { FormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
 import { APP_BASE_HREF } from "@angular/common";
 import { BrowserModule } from "@angular/platform-browser";
@@ -10,7 +11,7 @@ import { HomeComponent } from "./navegacao/home/home.component";
 import { FooterComponent } from "./navegacao/footer/footer.component";
 import { SobreComponent } from "./institucional/sobre/sobre.component";
 import { ContatoComponent } from "./institucional/contato/contato.component";
-import { DataBindingComponent } from './demos/data-binding/data-binding.component';
+import { DataBindingComponent } from "./demos/data-binding/data-binding.component";
 
 @NgModule({
   declarations: [
@@ -22,7 +23,11 @@ import { DataBindingComponent } from './demos/data-binding/data-binding.componen
     ContatoComponent,
     DataBindingComponent,
   ],
-  imports: [BrowserModule, [RouterModule.forRoot(rootRouterConfig)]],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    [RouterModule.forRoot(rootRouterConfig)],
+  ],
   providers: [
     {
       provide: APP_BASE_HREF,

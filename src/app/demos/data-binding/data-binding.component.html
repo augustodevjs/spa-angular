@@ -10,7 +10,7 @@
   <button class="btn btn-info" [disabled]="contador >= 10">INFO</button>
 
   <br />
-  <img [src]="urlImage" height="50px" width="50px">
+  <img [src]="urlImage" height="50px" width="50px" />
 
   <br />
   <br />
@@ -23,7 +23,13 @@
   <br />
   <br />
 
-  <button class="btn btn-warning" (click)="zerarContador()" [disabled]="contador < 10">Zerar Contador</button>
+  <button
+    class="btn btn-warning"
+    (click)="zerarContador()"
+    [disabled]="contador < 10"
+  >
+    Zerar Contador
+  </button>
 
   <br />
   <br />
@@ -31,8 +37,23 @@
 
   <h3>Two-way Binding</h3>
 
-  <input type="text" (keyup)="KeyUp($event)" placeholder="Digite o seu nome">
+  <!-- <input type="text" (keyup)="KeyUp($event)" placeholder="Digite o seu nome" />
   <br />
   <br />
-  <label>Seu nome é: {{ nome }}</label>
+  <label>Seu nome é: {{ nome }}</label> -->
+
+  <!-- <input
+    type="text"
+    [ngModel]="nome"
+    (ngModelChange)="nome = $event"
+    placeholder="Digite o seu nome"
+  />
+  <br />
+  <br />
+  <label>Seu nome é: {{ nome }}</label> -->
+
+  <input type="text" [(ngModel)]="nome" placeholder="Digite o seu nome" />
+  <br />
+  <br />
+  <label [ngClass]="nome">Seu nome é: {{ nome }}</label>
 </div>
