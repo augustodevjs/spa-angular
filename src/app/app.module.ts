@@ -3,6 +3,7 @@ import { FormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
 import { APP_BASE_HREF } from "@angular/common";
 import { BrowserModule } from "@angular/platform-browser";
+import { HttpClientModule } from "@angular/common/http";
 
 import { AppComponent } from "./app.component";
 import { rootRouterConfig } from "./app.routes";
@@ -26,6 +27,7 @@ import { MenuComponent, FooterComponent, HomeComponent } from "./navegacao";
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     [RouterModule.forRoot(rootRouterConfig)],
   ],
   providers: [

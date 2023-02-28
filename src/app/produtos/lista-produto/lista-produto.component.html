@@ -1,19 +1,32 @@
 <div class="container main-container">
   <div class="row text-center">
-    <div class="col-md-4" style="padding-bottom: 30px">
+    <div
+      *ngFor="let produto of produtos"
+      class="col-md-4"
+      style="padding-bottom: 30px"
+    >
       <div class="card h-100">
-        <a class="text-decoration-none">
+        <a
+          class="text-decoration-none"
+          [routerLink]="['/produto-detalhe', produto.id]"
+        >
           <div style="align-content: center">
-            <img src="/assets/imagem" height="164px" width="253px" />
+            <img
+              src="/assets/{{ produto.imagem }}"
+              height="164px"
+              width="253px"
+            />
           </div>
         </a>
         <div class="card-body">
-          <h4 class="card-title">Nome produto</h4>
+          <h4 class="card-title">{{ produto.nome }}</h4>
           <p>Por apenas:</p>
-          <div><h4>5000</h4></div>
+          <div>
+            <h4>R$ {{ produto.valor }}</h4>
+          </div>
         </div>
         <div class="card-footer">
-          <a class="btn btn-primary">
+          <a [routerLink]="['/carrinho', produto.id]" class="btn btn-primary">
             <span class="fa fa-shopping-cart"></span> Comprar
           </a>
         </div>

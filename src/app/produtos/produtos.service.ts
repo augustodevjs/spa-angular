@@ -10,6 +10,7 @@ export class ProdutoService {
   protected UrlServiceV1: string = "http://localhost:3000";
 
   getProducts(): Observable<Produto[]> {
-    return this.http.get<Produto[]>(`${this.UrlServiceV1}/products`);
+    const produto = this.http.get<Produto[]>(`${this.UrlServiceV1}/produtos`);
+    return produto;
   }
 }

@@ -7,7 +7,17 @@ import { Produto } from "../produto";
   templateUrl: "./lista-produto.component.html",
 })
 export class ListaProdutoComponent implements OnInit {
-  constructor(private pordutoService: ProdutoService) {}
+  constructor(private produtoService: ProdutoService) {}
 
-  ngOnInit() {}
+  public produtos: Produto[] = [];
+
+  ngOnInit() {
+    this.produtoService.getProducts().subscribe(
+      (produtos) => {
+        this.produtos = produtos;
+        console.log(produtos);
+      },
+      (error) => console.log(error)
+    );
+  }
 }
