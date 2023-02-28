@@ -1,4 +1,4 @@
-# Desenvolvedor.IO - Desenvolvimento SPA com Angular
+# Desenvolvedor.io - Desenvolvimento SPA com Angular
 
 App de estudo e as anotações do curso Desenvolvimento SPA com Angular | desenvolvedor.io
 
