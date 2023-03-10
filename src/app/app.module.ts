@@ -1,34 +1,37 @@
+import { NgBrazil } from "ng-brazil";
+import { CustomFormsModule } from "ng2-validation";
+import { TextMaskModule } from "angular2-text-mask";
 import { NgModule } from "@angular/core";
-import { FormsModule } from "@angular/forms";
-import { RouterModule } from "@angular/router";
 import { APP_BASE_HREF } from "@angular/common";
-import { BrowserModule } from "@angular/platform-browser";
 import { HttpClientModule } from "@angular/common/http";
-
-import { AppComponent } from "./app.component";
-import { rootRouterConfig } from "./app.routes";
-
-import { DataBindingComponent } from "./demos";
+import { BrowserModule } from "@angular/platform-browser";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { SobreComponent, ContatoComponent } from "./institucional";
 import { ProdutoService, ListaProdutoComponent } from "./produtos";
-import { MenuComponent, FooterComponent, HomeComponent } from "./navegacao";
+import { NavegacaoModule } from "./navegacao";
+import { DataBindingComponent, CadastroComponent } from "./demos";
+import { AppComponent } from "./app.component";
+import { AppRoutingModule } from "./app.routes";
 
 @NgModule({
   declarations: [
     AppComponent,
-    MenuComponent,
-    HomeComponent,
-    FooterComponent,
     SobreComponent,
     ContatoComponent,
     DataBindingComponent,
     ListaProdutoComponent,
+    CadastroComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    [RouterModule.forRoot(rootRouterConfig)],
+    ReactiveFormsModule,
+    NgBrazil,
+    CustomFormsModule,
+    TextMaskModule,
+    NavegacaoModule,
+    AppRoutingModule,
   ],
   providers: [
     ProdutoService,
